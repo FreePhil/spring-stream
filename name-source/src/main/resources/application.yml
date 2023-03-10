@@ -1,0 +1,18 @@
+server:
+  port: 9001
+
+spring:
+  cloud:
+    function:
+      definition: supplyName
+    stream:
+      bindings:
+        supplyName-out-0:
+          destination: processorinput
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: user
+    password: password
+    connection-timeout: 5s

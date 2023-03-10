@@ -1,0 +1,19 @@
+server:
+  port: 9003
+
+spring:
+  cloud:
+    function:
+      definition: nameSink
+    stream:
+      bindings:
+        nameSink-in-0:
+          destination: sinkinput
+          group: sink
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: user
+    password: password
+    connection-timeout: 5s

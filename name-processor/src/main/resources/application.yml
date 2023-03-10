@@ -1,0 +1,22 @@
+server:
+  port: 9002
+
+spring:
+  cloud:
+    function:
+      definition: processName
+    stream:
+      bindings:
+        processName-in-0:
+          destination: processorinput
+          group: source
+        processName-out-0:
+          destination: sinkinput
+
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: user
+    password: password
+    connection-timeout: 5s
