@@ -8,7 +8,7 @@ spring:
     stream:
       bindings:
         supplyName-out-0:
-          destination: processorinput
+          destination: processor-input
 
   rabbitmq:
     host: localhost

@@ -2,16 +2,18 @@ server:
   port: 9002
 
 spring:
+  application:
+    name: cloud-processor
   cloud:
     function:
       definition: processName
     stream:
       bindings:
         processName-in-0:
-          destination: processorinput
-          group: source
+          destination: processor-input
+          group: ${spring.application.name:processor}
         processName-out-0:
-          destination: sinkinput
+          destination: sink-input
 
 
   rabbitmq:

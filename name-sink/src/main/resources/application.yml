@@ -2,14 +2,16 @@ server:
   port: 9003
 
 spring:
+  application:
+    name: cloud-sink
   cloud:
     function:
       definition: nameSink
     stream:
       bindings:
         nameSink-in-0:
-          destination: sinkinput
-          group: sink
+          destination: sink-input
+          group: ${spring.application.name:sink}
 
   rabbitmq:
     host: localhost
