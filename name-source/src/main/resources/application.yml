@@ -9,6 +9,8 @@ spring:
       bindings:
         supplyName-out-0:
           destination: processor-input
+      poller:
+        fixed-delay: 10
 
   rabbitmq:
     host: localhost
